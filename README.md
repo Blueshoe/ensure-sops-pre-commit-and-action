@@ -7,6 +7,8 @@ Out of this, this pre-commit hook and GitHub action have been developed.
 We SOPS-encrypt the K8s secrets with following settings: `unencrypted_regex: "^(apiVersion|metadata|kind|type)$"`.
 This hook and action check, whether the file has a top-level key called `sops:`.
 
+The pre-commit hook and the action both ignore the files with the basename `.sops.yaml`, as that contains the SOPS-configuration.
+
 ## pre-commit hook
 
 ### Example usage

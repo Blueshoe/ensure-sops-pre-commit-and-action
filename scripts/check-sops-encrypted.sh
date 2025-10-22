@@ -9,6 +9,14 @@ HAS_UNENCRYPTED=0
 # The pre-commit framework passes the list of staged files as arguments.
 # We loop through each file provided.
 for file in "$@"; do
+    # Get the base name of the file
+    filename=$(basename "$file")
+    # Skip .sops.yaml files (sops configuration)
+    if [ "$filename" = ".sops.yaml" ]; then
+        echo "Skipping .sops.yaml file: $file"
+        continue
+    fi
+
     # Use grep to silently (-q) check if the file contains a line
     # starting with 'sops:'.
     if ! grep -q '^sops:' "$file"; then
