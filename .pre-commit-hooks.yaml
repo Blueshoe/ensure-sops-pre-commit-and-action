@@ -1,5 +1,5 @@
 -   id: forbid-unencrypted-sops
     name: Forbid unencrypted SOPS files
     description: "Checks that files are encrypted with SOPS, i.e. have a top-level 'sops' key."
-    entry: hooks/check-sops-encrypted.sh
+    entry: scripts/check-sops-encrypted.sh
     language: script
