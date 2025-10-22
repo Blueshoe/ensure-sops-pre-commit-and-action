@@ -18,7 +18,7 @@ Just add the following to your projects `.pre-commit-config.yaml`, to check whet
 # [...]
 repos:
   # [...]
-  - repo: https://github.com/Blueshoe/pre-commit-hook-ensure-sops
+  - repo: https://github.com/Blueshoe/ensure-sops-pre-commit-and-action
     rev: v1.0.0
     hooks:
       - id: forbid-unencrypted-sops
@@ -42,7 +42,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: "Run SOPS encryption check"
-        uses: blueshoe/pre-commit-hook-ensure-sops@v1.1.0
+        uses: blueshoe/ensure-sops-pre-commit-and-action@v1.1.0
         # You can override the default file pattern like this:
         # with:
         #   files-pattern: '"**/*.secret.yaml"'
