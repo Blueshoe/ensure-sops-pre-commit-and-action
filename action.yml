@@ -15,4 +15,4 @@ runs:
       shell: bash
       run: |
         # Find files matching the pattern and pass them to the script
-        find . -type f -name ${{ inputs.files-pattern }} -print0 | xargs -0 ${{ github.action_path }}/scripts/check-sops-encrypted.sh
+        find . -type f -wholename ${{ inputs.files-pattern }} -print0 | xargs -0 ${{ github.action_path }}/scripts/check-sops-encrypted.sh
